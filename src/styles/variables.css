@@ -1,0 +1,12 @@
+:root {
+  --ink: #0b0c0e;
+  --paper: #f5f2ed;
+  --gold: #c8a45a;
+  --gold2: #e8c47a;
+  --deep: #13141a;
+  --muted: #7a7870;
+  --border: rgba(200, 164, 90, 0.18);
+  --white: #fff;
+  --ff-display: 'Playfair Display', Georgia, serif;
+  --ff-body: 'Outfit', sans-serif;
+}

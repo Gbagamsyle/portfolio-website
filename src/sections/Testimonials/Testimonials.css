@@ -1,0 +1,81 @@
+.testimonials-section {
+  background: rgba(255, 255, 255, 0.015);
+  padding: 7rem 4rem;
+}
+
+.testimonial-label {
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.testi-wrap {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.testi-quote {
+  font-family: var(--ff-display);
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.testi-quote::before {
+  content: '\201C';
+  font-size: 5rem;
+  color: rgba(200, 164, 90, 0.2);
+  position: absolute;
+  top: -2rem;
+  left: -1.5rem;
+  font-family: var(--ff-display);
+  line-height: 1;
+}
+
+.testi-author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.testi-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.testi-role {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.testi-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 2.5rem;
+}
+
+.testi-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  cursor: none;
+  transition: all 0.3s;
+  padding: 0;
+}
+
+.testi-dot.active {
+  background: var(--gold);
+  width: 20px;
+  border-radius: 3px;
+}
