@@ -6,29 +6,29 @@ export default function Hero() {
       <div className="hero-bg" />
       <div className="hero-lines" />
       <div className="hero-inner">
-        <div className="hero-eyebrow">Available for work · Based in Abuja, Nigeria</div>
+        <div className="hero-eyebrow"><span className="hero-status-dot" /> Open to new opportunities</div>
         <h1 className="hero-name">Ogaba<br /><em>Silas</em></h1>
-        <p className="hero-role">Frontend Developer & Fullstack Engineer crafting high-performance digital experiences that convert and inspire.</p>
+        <p className="hero-role">Frontend Developer &amp; Fullstack Engineer building fast, accessible digital products that help ambitious teams move from idea to launch.</p>
         <div className="hero-actions">
-          <a href="#work" className="btn-primary">View My Work</a>
-          <a href="#contact" className="btn-secondary">Let's Talk</a>
+          <a href="#work" className="btn-primary">View Selected Work</a>
+          <a href="#contact" className="btn-secondary">Start a Conversation</a>
         </div>
-      </div>
 
-      <div className="hero-tag">
-        <div className="hero-stat">
-          <div className="hero-stat-num">5+</div>
-          <div className="hero-stat-label">Years Exp.</div>
-        </div>
-        <div className="hero-divider" />
-        <div className="hero-stat">
-          <div className="hero-stat-num">40+</div>
-          <div className="hero-stat-label">Projects</div>
-        </div>
-        <div className="hero-divider" />
-        <div className="hero-stat">
-          <div className="hero-stat-num">20+</div>
-          <div className="hero-stat-label">Clients</div>
+        <div className="hero-tag">
+          <div className="hero-stat">
+            <div className="hero-stat-num">5+</div>
+            <div className="hero-stat-label">Years experience</div>
+          </div>
+          <div className="hero-divider" />
+          <div className="hero-stat">
+            <div className="hero-stat-num">40+</div>
+            <div className="hero-stat-label">Projects delivered</div>
+          </div>
+          <div className="hero-divider" />
+          <div className="hero-stat">
+            <div className="hero-stat-num">20+</div>
+            <div className="hero-stat-label">Clients served</div>
+          </div>
         </div>
       </div>
 

@@ -41,6 +41,7 @@
 }
 
 .nav-cta {
+  position: relative;
   border: 1px solid var(--gold);
   color: var(--gold);
   padding: 0.45rem 1.3rem;
@@ -49,6 +50,36 @@
   text-transform: uppercase;
   text-decoration: none;
   transition: all 0.3s;
+}
+
+.nav-cta::before,
+.nav-cta::after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  pointer-events: none;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+
+.nav-cta::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid var(--gold2);
+  border-left: 2px solid var(--gold2);
+}
+
+.nav-cta::after {
+  right: -1px;
+  bottom: -1px;
+  border-right: 2px solid var(--gold2);
+  border-bottom: 2px solid var(--gold2);
+}
+
+.nav-cta:hover::before,
+.nav-cta:hover::after {
+  width: 8px;
+  height: 8px;
 }
 
 .nav-cta:hover {
