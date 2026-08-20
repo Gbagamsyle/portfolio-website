@@ -138,3 +138,19 @@ form input,
 form textarea {
   font: inherit;
 }
+
+@media (pointer: coarse) {
+  body,
+  body a,
+  body button,
+  body input,
+  body textarea {
+    cursor: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  section {
+    padding: 5rem 1.5rem;
+  }
+}

@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 1.4rem 4rem;
+  padding: 1.15rem 4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,11 +14,31 @@
   transition: all 0.4s;
 }
 
+.nav-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: inherit;
+  text-decoration: none;
+}
+
 .nav-logo {
+  display: grid;
+  place-items: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
   font-family: var(--ff-display);
-  font-size: 1.3rem;
+  font-size: 1rem;
   letter-spacing: 0.03em;
   color: var(--gold);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-brand:hover .nav-logo {
+  background: var(--gold);
+  color: var(--deep);
 }
 
 .nav-links {
@@ -28,6 +48,7 @@
 }
 
 .nav-links a {
+  position: relative;
   text-decoration: none;
   font-size: 0.82rem;
   letter-spacing: 0.12em;
@@ -36,8 +57,25 @@
   transition: color 0.3s;
 }
 
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.55rem;
+  height: 1px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
 .nav-links a:hover {
   color: var(--gold);
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1);
 }
 
 .nav-cta {
@@ -85,4 +123,85 @@
 .nav-cta:hover {
   background: var(--gold);
   color: var(--deep);
+}
+
+.nav-brand-name {
+  padding-left: 0.7rem;
+  border-left: 1px solid var(--border);
+  color: rgba(255, 255, 255, 0.52);
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.nav-availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.nav-availability span {
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 50%;
+  background: #8fc58b;
+}
+
+@media (max-width: 900px) {
+  .top-nav {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .nav-links {
+    gap: 1.2rem;
+  }
+
+  .nav-links a {
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+  }
+
+  .nav-availability {
+    display: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .top-nav {
+    align-items: flex-start;
+    gap: 0.55rem;
+  }
+
+  .nav-brand-name {
+    display: none;
+  }
+
+  .nav-links {
+    flex: 1 1 auto;
+    justify-content: center;
+    gap: clamp(0.35rem, 2vw, 0.75rem);
+    padding-top: 0.3rem;
+  }
+
+  .nav-links a {
+    font-size: 0.56rem;
+    letter-spacing: 0.04em;
+  }
+
+  .nav-cta {
+    flex: 0 0 auto;
+    padding: 0.4rem 0.7rem;
+    font-size: 0.58rem;
+  }
 }

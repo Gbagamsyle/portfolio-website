@@ -23,3 +23,12 @@
   transition: all 0.25s ease;
   transform: translate(-13px, -13px);
 }
+
+@media (pointer: coarse) {
+  #cursor-dot,
+  #cursor-ring,
+  .cursor-dot,
+  .cursor-ring {
+    display: none;
+  }
+}

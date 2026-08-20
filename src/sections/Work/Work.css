@@ -110,3 +110,35 @@
   margin-top: 0.8rem;
   text-decoration: none;
 }
+
+@media (max-width: 760px) {
+  .work-section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .work-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .work-card {
+    aspect-ratio: 5 / 4;
+  }
+
+  .work-card-overlay,
+  .work-card-info {
+    opacity: 1;
+  }
+
+  .work-card-info {
+    transform: translateY(0);
+    padding: 1.25rem;
+  }
+}
