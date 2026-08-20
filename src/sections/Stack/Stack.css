@@ -15,45 +15,107 @@
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   align-items: end;
-  margin-bottom: 3.5rem;
+  margin-bottom: 3rem;
 }
 
 .stack-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0;
+  border-top: 1px solid var(--border);
 }
 
 .stack-item {
+  display: grid;
+  grid-template-columns: 2.2rem 2.5rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: center;
   border: 1px solid var(--border);
-  padding: 1.5rem 1rem;
-  text-align: center;
-  transition: all 0.3s;
-  background: rgba(255, 255, 255, 0.02);
+  border-top: 0;
+  padding: 1.2rem 1rem;
+  transition: border-color 0.3s ease, background 0.3s ease, transform 0.3s ease;
+  background: rgba(255, 255, 255, 0.018);
 }
 
 .stack-item:hover {
   border-color: var(--gold);
   background: rgba(200, 164, 90, 0.05);
-  transform: translateY(-3px);
+  transform: translateX(4px);
+  position: relative;
+  z-index: 1;
+}
+
+.stack-index {
+  color: rgba(200, 164, 90, 0.45);
+  font-family: var(--ff-display);
+  font-size: 0.9rem;
+}
+
+.stack-copy {
+  min-width: 0;
 }
 
 .stack-icon {
-  font-size: 2rem;
-  margin-bottom: 0.8rem;
+  font-size: 1.55rem;
   display: block;
+  filter: grayscale(0.15);
+}
+
+.stack-icon-mark {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.25rem;
+  font-family: var(--ff-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  filter: none;
+}
+
+.stack-icon-mark {
+  color: #fff;
+  background: #3178c6;
+}
+
+.stack-icon-node {
+  border-radius: 50%;
+  background: #539e43;
+  font-size: 0.62rem;
+  letter-spacing: -0.08em;
 }
 
 .stack-name {
-  font-size: 0.82rem;
-  letter-spacing: 0.08em;
-  color: rgba(255, 255, 255, 0.7);
+  font-family: var(--ff-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .stack-cat {
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-top: 0.3rem;
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 900px) {
+  .stack-head {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .stack-section {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .stack-grid {
+    grid-template-columns: 1fr;
+  }
+
 }

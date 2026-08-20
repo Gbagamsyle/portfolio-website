@@ -1,6 +1,6 @@
 .about-section {
   background: rgba(255, 255, 255, 0.02);
-  padding: 7rem 4rem;
+  padding: 5.5rem 4rem 7rem;
 }
 
 .about-grid {
@@ -16,20 +16,40 @@
   position: relative;
 }
 
+.about-img-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -0.65rem;
+  border-top: 1px solid rgba(200, 164, 90, 0.4);
+  border-left: 1px solid rgba(200, 164, 90, 0.4);
+  pointer-events: none;
+  z-index: 2;
+}
+
 .about-img {
   width: 100%;
   aspect-ratio: 3 / 4;
-  background:
-    linear-gradient(145deg, rgba(95, 31, 46, 0.34), rgba(38, 54, 45, 0.52)),
-    url('/assets/about.jpg') center / cover;
+  display: block;
+  object-fit: cover;
+  object-position: center 28%;
   overflow: hidden;
   border: 1px solid var(--border);
+  filter: saturate(0.88) contrast(1.04);
+}
+
+.about-img-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(to top, rgba(19, 20, 26, 0.42), transparent 48%);
 }
 
 .about-img-label {
   position: absolute;
-  bottom: -1rem;
-  right: -1rem;
+  bottom: 1.2rem;
+  right: -0.8rem;
+  z-index: 3;
   background: var(--gold);
   color: var(--deep);
   padding: 0.6rem 1rem;
@@ -37,6 +57,18 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   font-weight: 600;
+  box-shadow: 0 0.7rem 1.5rem rgba(0, 0, 0, 0.22);
+}
+
+.about-img-label::after {
+  content: '';
+  position: absolute;
+  right: -0.35rem;
+  bottom: -0.35rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-right: 1px solid var(--gold2);
+  border-bottom: 1px solid var(--gold2);
 }
 
 .about-text p {
@@ -44,6 +76,39 @@
   line-height: 1.85;
   font-weight: 300;
   margin-bottom: 1.2rem;
+}
+
+.about-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.about-cta .btn-primary,
+.about-cta .btn-secondary {
+  font-size: 0.72rem;
+  padding: 0.7rem 1.15rem;
+}
+
+.about-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  align-items: center;
+  margin-top: 1.2rem;
+  color: rgba(255, 255, 255, 0.38);
+  font-size: 0.64rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.about-trust span {
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: var(--gold);
 }
 
 .about-stats {

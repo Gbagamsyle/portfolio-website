@@ -43,12 +43,20 @@ export const projects = [
 export const stackItems = [
   { icon: '⚛️', name: 'React', category: 'Frontend' },
   { icon: '▲', name: 'Next.js', category: 'Framework' },
-  { icon: '🟦', name: 'TypeScript', category: 'Language' },
-  { icon: '🟩', name: 'Node.js', category: 'Backend' },
+  { icon: '', mark: 'TS', name: 'TypeScript', category: 'Language' },
+  { icon: 'JS', name: 'JavaScript', category: 'Language' },
+  { icon: '◇', name: 'HTML & CSS', category: 'Web' },
+  { icon: '🌊', name: 'Tailwind CSS', category: 'Styling' },
+  { icon: '◈', name: 'Figma', category: 'Design' },
+  { icon: '', mark: 'node', name: 'Node.js', category: 'Backend' },
+  { icon: 'EX', name: 'Express', category: 'Backend' },
+  { icon: '◉', name: 'GraphQL', category: 'API' },
   { icon: '🐘', name: 'PostgreSQL', category: 'Database' },
   { icon: '🍃', name: 'MongoDB', category: 'Database' },
-  { icon: '🌊', name: 'Tailwind CSS', category: 'Styling' },
+  { icon: 'RS', name: 'Redis', category: 'Database' },
   { icon: '🐳', name: 'Docker', category: 'DevOps' },
+  { icon: '☁', name: 'AWS', category: 'Cloud' },
+  { icon: '⌘', name: 'Git & GitHub', category: 'Workflow' },
 ]
 
 export const testimonials = [

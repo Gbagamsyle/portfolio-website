@@ -5,28 +5,34 @@ export default function About() {
     <section id="about" className="about-section">
       <div className="about-grid">
         <div className="about-img-wrap reveal">
-          <div className="about-img" role="img" aria-label="Creative office interior" />
+          <img className="about-img" src="/assets/syle.jpg" alt="Ogaba Silas" />
           <div className="about-img-label">Ogaba Silas · Dev</div>
         </div>
 
         <div className="about-text reveal">
           <div className="section-label">About Me</div>
           <h2 className="section-title">Building Things That Actually Work</h2>
-          <p>I'm a Frontend Developer and Fullstack Engineer with a passion for building fast, beautiful, and scalable web applications. I work at the intersection of design and engineering — making sure every product I touch looks as good as it performs.</p>
-          <p>From pixel-perfect UIs in React and Next.js to robust backend systems with Node.js and PostgreSQL, I handle the full spectrum. I don't just write code — I solve problems and build businesses.</p>
+          <p>I turn ambitious product ideas into digital experiences people want to use and businesses can rely on. As a frontend developer and fullstack engineer, I combine thoughtful interfaces with dependable systems to help founders move from rough concept to confident launch.</p>
+          <p>From shaping product direction and translating ideas into intuitive interfaces to building the systems that make them reliable, I stay close to the real problem: understand the goal, simplify the experience, and ship work that performs in the real world.</p>
+
+          <div className="about-cta">
+            <a href="#contact" className="btn-primary">Tell Me About Your Project</a>
+            <a href="#work" className="btn-secondary">See My Work</a>
+          </div>
+          <div className="about-trust">Clear communication <span /> Reliable delivery <span /> Built to scale</div>
 
           <div className="about-stats">
             <div className="stat-item">
-              <span className="stat-num" data-target="5">0</span>
-              <span className="stat-label">Years Exp.</span>
+              <span className="stat-num">5+</span>
+              <span className="stat-label">Years Experience</span>
             </div>
             <div className="stat-item">
-              <span className="stat-num" data-target="40">0</span>
-              <span className="stat-label">Projects Done</span>
+              <span className="stat-num">40+</span>
+              <span className="stat-label">Projects Delivered</span>
             </div>
             <div className="stat-item">
-              <span className="stat-num" data-target="20">0</span>
-              <span className="stat-label">Happy Clients</span>
+              <span className="stat-num">20+</span>
+              <span className="stat-label">Clients Served</span>
             </div>
           </div>
         </div>
