@@ -1,11 +1,11 @@
 :root {
   --ink: #0b0c0e;
   --paper: #f5f2ed;
-  --gold: #c8a45a;
-  --gold2: #e8c47a;
+  --gold: #5e5b52;
+  --gold2: #8a8578;
   --deep: #13141a;
   --muted: #7a7870;
-  --border: rgba(200, 164, 90, 0.18);
+  --border: rgba(94, 91, 82, 0.24);
   --white: #fff;
   --ff-display: 'Playfair Display', Georgia, serif;
   --ff-hero: 'Cormorant Garamond', Georgia, serif;
