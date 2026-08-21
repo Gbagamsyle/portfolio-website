@@ -21,7 +21,7 @@ export default function Work() {
             <div className="work-card-info">
               <div className="work-card-title">{project.title}</div>
               <div className="work-card-sub">{project.description}</div>
-              <a href="#" className="work-card-link">View Project →</a>
+                <a href={project.url || '#'} className="work-card-link" target={project.url ? '_blank' : undefined} rel={project.url ? 'noreferrer' : undefined}>View Project →</a>
             </div>
           </div>
         ))}

@@ -37,7 +37,7 @@ export const projects = [
   { title: 'FinTrack Dashboard', category: 'SaaS · React', description: 'Real-time financial analytics platform', background: '/assets/fintrack.jpg' },
   { title: 'LuxMarket Store', category: 'E-Commerce · Next.js', description: 'Full-stack e-commerce with Stripe payments', background: '/assets/luxmarket.jpg' },
   { title: 'ConnectHub Platform', category: 'Social · Node.js', description: 'Real-time social platform with WebSockets', background: '/assets/connecthub.jpg' },
-  { title: 'Creativo Agency Site', category: 'Portfolio · TypeScript', description: 'Motion-heavy creative agency website', background: '/assets/creativo.jpg' },
+  { title: 'Metsad Engineering Services', category: 'Corporate · Engineering', description: 'A clear digital platform presenting industrial engineering capabilities, services, and support channels.', background: '/assets/metsad-engineering.jpg', url: 'https://www.metsadgroup.com/' },
 ]
 
 export const stackItems = [
