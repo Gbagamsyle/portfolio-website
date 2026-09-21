@@ -14,16 +14,16 @@ export default function Work() {
 
       <div className="work-grid">
         {projects.map((project, index) => (
-          <div className="work-card reveal" key={project.title} style={{ backgroundImage: `linear-gradient(to top, rgba(13, 14, 19, 0.95) 0%, rgba(13, 14, 19, 0.05) 65%), url('${project.background}')` }}>
+          <a href={`/projects/${project.slug}`} className={`work-card reveal${project.title === 'Metsad Engineering Services' ? ' work-card--metsad' : ''}`} key={project.title} style={{ backgroundImage: `linear-gradient(to top, rgba(13, 14, 19, 0.95) 0%, rgba(13, 14, 19, 0.05) 65%), url('${project.background}')` }}>
             <div className="work-card-bg">{String(index + 1).padStart(2, '0')}</div>
             <div className="work-card-tag">{project.category}</div>
             <div className="work-card-overlay" />
             <div className="work-card-info">
               <div className="work-card-title">{project.title}</div>
               <div className="work-card-sub">{project.description}</div>
-                <a href={project.url || '#'} className="work-card-link" target={project.url ? '_blank' : undefined} rel={project.url ? 'noreferrer' : undefined}>View Project →</a>
+                    <span className="work-card-link">View Project →</span>
             </div>
-          </div>
+                  </a>
         ))}
       </div>
     </section>

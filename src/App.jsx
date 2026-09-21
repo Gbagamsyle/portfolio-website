@@ -8,12 +8,16 @@ import Work from './sections/Work/Work'
 import Stack from './sections/Stack/Stack'
 import Testimonials from './sections/Testimonials/Testimonials'
 import Contact from './sections/Contact/Contact'
+import ProjectDetail from './sections/ProjectDetail/ProjectDetail'
 import { testimonials } from './data/siteData'
 
 export default function App() {
   const cursorRef = useRef(null)
   const ringRef = useRef(null)
   const [activeTestimonial, setActiveTestimonial] = useState(0)
+  const projectSlug = window.location.pathname.startsWith('/projects/')
+    ? window.location.pathname.split('/')[2]
+    : null
 
   useEffect(() => {
     const cursor = cursorRef.current
@@ -93,6 +97,7 @@ export default function App() {
 
   return (
     <MainLayout cursorRef={cursorRef} ringRef={ringRef}>
+      {projectSlug ? <ProjectDetail slug={projectSlug} /> : <>
       <Hero />
       <Marquee />
       <About />
@@ -101,6 +106,7 @@ export default function App() {
       <Stack />
       <Testimonials activeIndex={activeTestimonial} setActiveIndex={setActiveTestimonial} />
       <Contact />
+      </>}
     </MainLayout>
   )
 }

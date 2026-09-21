@@ -20,21 +20,6 @@ export default function About() {
             <a href="#work" className="btn-secondary">See My Work</a>
           </div>
           <div className="about-trust">Clear communication <span /> Reliable delivery <span /> Built to scale</div>
-
-          <div className="about-stats">
-            <div className="stat-item">
-              <span className="stat-num">5+</span>
-              <span className="stat-label">Years Experience</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-num">40+</span>
-              <span className="stat-label">Projects Delivered</span>
-            </div>
-            <div className="stat-item">
-              <span className="stat-num">20+</span>
-              <span className="stat-label">Clients Served</span>
-            </div>
-          </div>
         </div>
       </div>
     </section>
