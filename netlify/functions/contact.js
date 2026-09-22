@@ -35,6 +35,10 @@ exports.handler = async (event) => {
     return jsonResponse(500, { error: 'Email service is not configured yet.' })
   }
 
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(process.env.RESEND_FROM_EMAIL)) {
+    return jsonResponse(500, { error: 'RESEND_FROM_EMAIL must be a valid email address.' })
+  }
+
   try {
     const resendResponse = await fetch('https://api.resend.com/emails', {
       method: 'POST',
