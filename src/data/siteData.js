@@ -56,7 +56,7 @@ export const projects = [
     stack: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express', 'Python', 'Supabase', 'Dexie'],
     highlights: ['Patient management, vitals, and QR-based record workflows', 'Offline-first synchronization for constrained environments', 'AI-assisted diagnosis workflows with cryptographic signing support'],
     githubUrl: 'https://github.com/Gbagamsyle/EdgeMed-Sync',
-    liveUrl: 'https://edge-med-sync.vercel.app/',
+    liveUrl: null,
   },
   {
     slug: 'devscraper',
