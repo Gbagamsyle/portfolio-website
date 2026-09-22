@@ -13,6 +13,7 @@ Notes:
 - All interactivity (custom cursor, reveal, counters, testimonials) lives in `src/App.jsx` using React hooks.
 
 Contact form setup:
-- Create a Resend account and add a verified sending domain, then update the `from` address in `api/contact.js`.
-- Add `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, and `CONTACT_EMAIL` to the Vercel project environment variables.
-- Redeploy after adding the variables. Local development can use the same variables in a `.env.local` file.
+- Create a Resend account and add a verified sending domain.
+- In Netlify, add `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, and `CONTACT_EMAIL` under Site configuration > Environment variables.
+- `RESEND_FROM_EMAIL` must use the verified Resend domain, while `CONTACT_EMAIL` is the inbox that receives inquiries.
+- Redeploy after adding the variables. The form submits to the Netlify Function at `/.netlify/functions/contact`.
