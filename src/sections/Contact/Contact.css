@@ -201,6 +201,26 @@
   transform: translateY(-2px);
 }
 
+.form-submit:disabled {
+  opacity: 0.6;
+  cursor: wait;
+  transform: none;
+}
+
+.form-status {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.form-status-success {
+  color: #8fc58b;
+}
+
+.form-status-error {
+  color: #e9a39b;
+}
+
 @media (max-width: 850px) {
   .contact-grid {
     grid-template-columns: 1fr;
