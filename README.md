@@ -17,3 +17,4 @@ Contact form setup:
 - In Netlify, add `RESEND_API_KEY`, `RESEND_FROM_EMAIL`, and `CONTACT_EMAIL` under Site configuration > Environment variables.
 - `RESEND_FROM_EMAIL` must use the verified Resend domain, while `CONTACT_EMAIL` is the inbox that receives inquiries.
 - Redeploy after adding the variables. The form submits to the Netlify Function at `/.netlify/functions/contact`.
+- For local Netlify development, copy `.env.example` to `.env` and replace the placeholder values, then run `npx netlify dev`.

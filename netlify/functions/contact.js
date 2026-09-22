@@ -31,7 +31,7 @@ exports.handler = async (event) => {
     return jsonResponse(400, { error: 'One or more fields are too long.' })
   }
 
-  if (!process.env.RESEND_API_KEY || !process.env.CONTACT_EMAIL) {
+  if (!process.env.RESEND_API_KEY || !process.env.RESEND_FROM_EMAIL || !process.env.CONTACT_EMAIL) {
     return jsonResponse(500, { error: 'Email service is not configured yet.' })
   }
 
@@ -43,7 +43,7 @@ exports.handler = async (event) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: `Portfolio contact <${process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev'}>`,
+        from: `Portfolio contact <${process.env.RESEND_FROM_EMAIL}>`,
         to: [process.env.CONTACT_EMAIL],
         reply_to: email.trim(),
         subject: `New Portfolio Inquiry: ${subject.trim()}`,
