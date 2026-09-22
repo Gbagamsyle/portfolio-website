@@ -1,6 +1,8 @@
 import './Contact.css'
 import { useState } from 'react'
 
+const contactEmail = ['ogabasyle', 'gmail.com'].join(String.fromCharCode(64))
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: '',
@@ -46,7 +48,7 @@ export default function Contact() {
             <div className="section-label reveal contact-label">Start a conversation</div>
             <h2 className="section-title reveal contact-title">Have a product worth building?</h2>
             <p className="section-sub reveal contact-sub">Tell me where you are, what you are trying to solve, and what success looks like. I will help you find the clearest path from idea to launch.</p>
-            <a href="mailto:ogabasyle@gmail.com" className="contact-email reveal"><span className="contact-email-address">ogabasyle@gmail.com</span><span className="contact-email-arrow" aria-hidden="true">↗</span></a>
+            <a href={`mailto:${contactEmail}`} className="contact-email reveal"><span className="contact-email-address">{contactEmail}</span><span className="contact-email-arrow" aria-hidden="true">↗</span></a>
             <div className="contact-note reveal"><span className="contact-dot" /> Usually replies within 1 business day</div>
           </div>
 
