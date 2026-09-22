@@ -11,6 +11,7 @@ export default function Hero() {
         <p className="hero-role">Frontend Developer &amp; Fullstack Engineer building fast, accessible digital products that help ambitious teams move from idea to launch.</p>
         <div className="hero-actions">
           <a href="#work" className="btn-primary">View Selected Work</a>
+          <a href="/assets/cv.pdf" className="btn-secondary" download>Download CV</a>
           <a href="#contact" className="btn-secondary">Start a Conversation</a>
         </div>
 
