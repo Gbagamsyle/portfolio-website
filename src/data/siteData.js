@@ -71,6 +71,18 @@ export const projects = [
     liveUrl: null,
   },
   {
+    slug: 'hair-by-prevail',
+    title: 'Hair by Prevail',
+    category: 'Beauty · Luxury Brand',
+    description: 'Editorial luxury hair studio site for bespoke wigs, styling, revamps, and direct booking.',
+    background: '/assets/prevail.png',
+    overview: 'Hair by Prevail is a premium beauty brand experience for a wig and styling studio focused on luxury hair transformation, custom styling, and direct WhatsApp booking. The site blends editorial product storytelling with high-conversion service discovery, lookbook inspiration, and appointment-ready CTAs.',
+    stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Vercel', 'WhatsApp Booking'],
+    highlights: ['Luxury brand storytelling with lookbook-led service presentation', 'Direct booking paths for custom wigs, revamps, styling, and braiding', 'Responsive conversion-focused layout built for high-end beauty positioning'],
+    githubUrl: 'https://github.com/Gbagamsyle/hairbyprevail',
+    liveUrl: 'https://hairbyprevail-nine.vercel.app/',
+  },
+  {
     slug: 'devscraper',
     title: 'DevScraper',
     category: 'Developer Tools · Python',
