@@ -199,18 +199,18 @@ export const stackItems = [
 
 export const testimonials = [
   {
-    q: '"Ogaba delivered our platform in record time without cutting a single corner on quality. The codebase is clean, the UI is gorgeous, and the performance scores are through the roof. Genuinely one of the best developers we\'ve worked with."',
-    name: 'Amara Nwosu',
-    role: 'CEO, PayFlow Africa',
+    q: '"Ogaba delivered our platform in record time without cutting a single corner on quality. The UI is gorgeous, and the performance scores are through the roof. Genuinely one of the best developers we\'ve worked with."',
+    name: 'Engr Agada',
+    role: 'CEO, Metsad Engineering Services',
   },
   {
-    q: '"Working with Ogaba felt less like hiring a developer and more like gaining a co-founder. He understood the business goals, asked the right questions, and built exactly what we needed — and more."',
-    name: 'Tunde Okafor',
-    role: 'Founder, TradeBase Nigeria',
+    q: '"He understood the business goals, asked the right questions, and built exactly what we needed and more."',
+    name: 'Abdulrahman Abubakar',
+    role: 'Godee Alliance',
   },
   {
-    q: '"The attention to detail is unreal. Every animation, every hover state, every breakpoint — handled perfectly. Our users compliment the interface daily. Ogaba is the real deal."',
-    name: 'Chisom Eze',
-    role: 'Product Lead, Helika',
+    q: '"The attention to detail is top notch. Every animation, every hover state, every breakpoint handled perfectly. "',
+    name: 'Augustine Emmanuel',
+    role: 'Product Lead, Edge-Health Sync',
   },
 ]
