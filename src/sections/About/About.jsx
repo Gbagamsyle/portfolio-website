@@ -1,11 +1,12 @@
 import './About.css'
+import { profileImage } from '../../data/siteData'
 
 export default function About() {
   return (
     <section id="about" className="about-section">
       <div className="about-grid">
         <div className="about-img-wrap reveal">
-          <img className="about-img" src="/assets/syle.jpg" alt="Ogaba Silas" />
+          <img className="about-img" src={profileImage} alt="Ogaba Silas" width="720" height="959" loading="lazy" decoding="async" />
           <div className="about-img-label">Ogaba Silas · Dev</div>
         </div>
 

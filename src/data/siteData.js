@@ -1,3 +1,12 @@
+export const getAssetPath = (filename) => {
+  const extensionIndex = filename.lastIndexOf('.')
+  const basename = filename.slice(0, extensionIndex)
+  const useOptimizedAsset = import.meta.env.PROD || typeof window === 'undefined'
+  return useOptimizedAsset ? `/assets/${basename}.webp` : `/assets/${filename}`
+}
+
+export const profileImage = getAssetPath('syle.jpg')
+
 export const navigation = [
   { label: 'About', href: '#about' },
   { label: 'Services', href: '#services' },
@@ -39,7 +48,7 @@ export const projects = [
     title: 'FlowMoney',
     category: 'Personal Finance · Full-stack',
     description: 'Cash-flow planning that helps people with irregular income understand what they can safely spend.',
-    background: '/assets/flowmoney.jpg',
+    background: getAssetPath('flowmoney.jpg'),
     overview: 'A personal finance planning app that brings current funds, expected income, upcoming obligations, and monthly plans into one clear picture. FlowMoney helps freelancers and independent professionals plan around uneven cash flow without holding or moving their money.',
     stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'NestJS', 'PostgreSQL', 'Prisma', 'Clerk'],
     highlights: ['Dashboard with estimated Safe-to-Spend and a clear view of funds and commitments', 'Income-aware planning for irregular or seasonal earnings', 'Monthly plans, what-if scenarios, and reviewed statement insights'],
@@ -51,7 +60,7 @@ export const projects = [
     title: 'OpsFlow',
     category: 'Operations SaaS · Full-stack',
     description: 'Real-time operations workspace for client work and project delivery',
-    background: '/assets/opsflow.png',
+    background: getAssetPath('opsflow.png'),
     overview: 'A calm, multi-organization operations workspace that brings projects, clients, tasks, team coordination, and activity updates into one focused command center.',
     stack: ['Next.js', 'React', 'TypeScript', 'NestJS', 'Prisma', 'PostgreSQL', 'Clerk', 'Socket.IO', 'dnd-kit', 'Playwright'],
     highlights: ['Multi-organization workspaces with authenticated membership', 'Project, client, task, and team coordination', 'Real-time activity updates and collaborative Kanban workflows'],
@@ -63,7 +72,7 @@ export const projects = [
     title: 'Edge-Health Sync',
     category: 'Healthcare · Edge Computing',
     description: 'Patient records and care coordination with offline-first workflows',
-    background: '/assets/edge-health.jpg',
+    background: getAssetPath('edge-health.jpg'),
     overview: 'An open-source healthcare platform designed to move critical processing closer to patients and care teams, combining secure records, clinical workflows, and resilient offline synchronization.',
     stack: ['React', 'Vite', 'Tailwind CSS', 'Node.js', 'Express', 'Python', 'Supabase', 'Dexie'],
     highlights: ['Patient management, vitals, and QR-based record workflows', 'Offline-first synchronization for constrained environments', 'AI-assisted diagnosis workflows with cryptographic signing support'],
@@ -75,7 +84,7 @@ export const projects = [
     title: 'Hair by Prevail',
     category: 'Beauty · Luxury Brand',
     description: 'Editorial luxury hair studio site for bespoke wigs, styling, revamps, and direct booking.',
-    background: '/assets/prevail.png',
+    background: getAssetPath('prevail.png'),
     overview: 'Hair by Prevail is a premium beauty brand experience for a wig and styling studio focused on luxury hair transformation, custom styling, and direct WhatsApp booking. The site blends editorial product storytelling with high-conversion service discovery, lookbook inspiration, and appointment-ready CTAs.',
     stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Vercel', 'WhatsApp Booking'],
     highlights: ['Luxury brand storytelling with lookbook-led service presentation', 'Direct booking paths for custom wigs, revamps, styling, and braiding', 'Responsive conversion-focused layout built for high-end beauty positioning'],
@@ -87,7 +96,7 @@ export const projects = [
     title: 'DevScraper',
     category: 'Developer Tools · Python',
     description: 'Production-oriented job aggregation pipeline for remote developers',
-    background: '/assets/Devscraper.png',
+    background: getAssetPath('Devscraper.png'),
     overview: 'A resilient job scraping platform that gathers remote development opportunities from multiple sources, filters for Nigeria-relevant roles, and exports clean, deduplicated results for developers.',
     stack: ['Python', 'SerpAPI', 'Twitter API v2', 'RemoteOK', 'LinkedIn', 'ThreadPoolExecutor', 'JSON', 'CSV'],
     highlights: ['Concurrent scraping across multiple job sources', 'Retry handling, deduplication, and structured logging', 'Nigeria-focused filtering with JSON and CSV exports'],
@@ -99,7 +108,7 @@ export const projects = [
     title: 'Metsad Engineering Services',
     category: 'Corporate · Full-stack',
     description: 'Modern corporate platform for engineering services, contact, and business support.',
-    background: '/assets/metsad-engineering.jpg',
+    background: getAssetPath('metsad-engineering.jpg'),
     overview: 'A full-stack corporate web platform that presents Metsad Engineering Services clearly while connecting visitors to responsive contact and support workflows.',
     stack: ['React', 'JavaScript', 'CSS', 'Vite', 'Serverless Functions', 'Email Automation', 'Vercel'],
     highlights: ['Responsive corporate experience for technical services', 'Serverless architecture and automated email workflows', 'Production deployment with SEO and SPA routing support'],
@@ -112,7 +121,7 @@ export const projects = [
     title: 'Wide Star Beauty Salon',
     category: 'Beauty · React',
     description: 'Editorial salon experience designed to turn discovery into bookings.',
-    background: '/assets/widestar.png',
+    background: getAssetPath('widestar.png'),
     overview: 'A premium salon website concept for Wide Star Beauty in Dubai Marina, pairing an editorial visual direction with clear service journeys, gallery discovery, and a direct path to appointment booking.',
     stack: ['React', 'Vite', 'React Router', 'JavaScript', 'CSS', 'Vercel'],
     highlights: ['Route-based journeys for services, gallery, about, contact, and booking', 'Filterable gallery and animated customer review experience', 'Responsive navigation with mobile sticky booking actions'],
@@ -124,7 +133,7 @@ export const projects = [
     title: 'Deccan Farms',
     category: 'E-commerce · JavaScript',
     description: 'Fresh-food storefront with local delivery and WhatsApp ordering.',
-    background: '/assets/deccan.png',
+    background: getAssetPath('deccan.png'),
     overview: 'A conversion-focused fresh-food storefront for Pune customers, combining product discovery, filtering, cart and checkout flows, delivery-slot selection, and lightweight local commerce tools.',
     stack: ['HTML', 'CSS', 'JavaScript', 'LocalStorage', 'WhatsApp Ordering'],
     highlights: ['Product catalog with category, diet, and search filters', 'Cart, promo codes, delivery fees, and checkout simulation', 'Local admin CMS with stock, orders, and B2B lead management'],
@@ -136,7 +145,7 @@ export const projects = [
     title: 'MORPHÉ Contemporary',
     category: 'Arts & Culture · Editorial Experience',
     description: 'A digital-first contemporary art institution for exhibitions, artists, and visitors.',
-    background: '/assets/a.png',
+    background: getAssetPath('a.png'),
     overview: 'A fictional contemporary art museum concept presented through an art-led editorial experience. The site brings its exhibition programme, artist directory, exhibition archive, and visitor information together in a distinctive museum-inspired interface.',
     stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Motion'],
     highlights: ['Exhibition programme with detailed exhibition pages and archive', 'Artist directory and visitor information experience', 'Editorial visual system built around typography, whitespace, and artwork'],
@@ -148,7 +157,7 @@ export const projects = [
     title: 'KINETIC',
     category: 'Sports Science · Brand Concept',
     description: 'A high-impact human-performance lab concept exploring training, biomechanics, and athletic progress.',
-    background: '/assets/b.png',
+    background: getAssetPath('b.png'),
     overview: 'A fictional sports-science and human-performance concept built as an editorial campaign experience. KINETIC combines cinematic training imagery, performance data visualizations, training disciplines, and athlete stories in a bold, high-contrast interface.',
     stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'CSS'],
     highlights: ['Campaign-style hero and performance ticker', 'Biomechanics data, training disciplines, and method sections', 'Athlete case studies with explicitly fictional demo metrics'],
@@ -160,7 +169,7 @@ export const projects = [
     title: 'AETHER',
     category: 'AI Infrastructure · Concept Experience',
     description: 'A fictional autonomous compute network concept for machine-native software.',
-    background: '/assets/c.png',
+    background: getAssetPath('c.png'),
     overview: 'A cinematic interface concept imagining a distributed coordination layer where autonomous agents discover compute, coordinate workloads, and transact across an open machine network. The project is a fictional design study, not a real infrastructure or cryptocurrency service.',
     stack: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'Canvas', 'SVG'],
     highlights: ['Animated network topology and simulated telemetry', 'Interactive protocol and system architecture visualizations', 'Developer-focused terminal and SDK concept sections'],

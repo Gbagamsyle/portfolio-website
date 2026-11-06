@@ -41,7 +41,7 @@ try {
       pathname: '/',
       title: 'Ogaba Silas | Web Developer in Abuja, Nigeria & Worldwide',
       description: 'Ogaba Silas is a website and web developer in Abuja, Nigeria, building fast, accessible websites and apps for clients locally and worldwide.',
-      image: '/assets/syle.jpg',
+      image: '/assets/syle.webp',
       type: 'website',
     },
     ...projects.map((project) => ({

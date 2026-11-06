@@ -9,7 +9,7 @@ import Stack from './sections/Stack/Stack'
 import Testimonials from './sections/Testimonials/Testimonials'
 import Contact from './sections/Contact/Contact'
 import ProjectDetail from './sections/ProjectDetail/ProjectDetail'
-import { projects } from './data/siteData'
+import { profileImage, projects } from './data/siteData'
 
 export default function App() {
   const cursorRef = useRef(null)
@@ -34,7 +34,7 @@ export default function App() {
       : projectSlug
         ? 'The requested project could not be found.'
         : 'Ogaba Silas is a website and web developer in Abuja, Nigeria, building fast, accessible websites and apps for clients locally and worldwide.'
-    const image = activeProject?.background ?? '/assets/syle.jpg'
+    const image = activeProject?.background ?? profileImage
     const imageUrl = new URL(image, origin).href
 
     document.title = title
@@ -111,26 +111,6 @@ export default function App() {
     )
 
     document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el))
-
-    document.querySelectorAll('[data-target]').forEach((el) => {
-      const target = Number(el.dataset.target)
-      const counterObserver = new IntersectionObserver(
-        (entries) => {
-          if (entries[0].isIntersecting) {
-            let current = 0
-            const step = target / 40
-            const timer = setInterval(() => {
-              current = Math.min(current + step, target)
-              el.textContent = `${Math.round(current)}${target >= 5 ? '+' : ''}`
-              if (current >= target) clearInterval(timer)
-            }, 40)
-            counterObserver.unobserve(el)
-          }
-        },
-        { threshold: 0.5 }
-      )
-      counterObserver.observe(el)
-    })
 
     return () => {
       document.removeEventListener('mousemove', onMove)

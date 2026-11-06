@@ -14,7 +14,8 @@ export default function Work() {
 
       <div className="work-grid">
         {projects.map((project, index) => (
-          <a href={`/projects/${project.slug}`} className={`work-card reveal${project.title === 'Metsad Engineering Services' ? ' work-card--metsad' : ''}`} key={project.title} style={{ backgroundImage: `linear-gradient(to top, rgba(13, 14, 19, 0.95) 0%, rgba(13, 14, 19, 0.05) 65%), url('${project.background}')` }}>
+          <a href={`/projects/${project.slug}`} className={`work-card reveal${project.title === 'Metsad Engineering Services' ? ' work-card--metsad' : ''}`} key={project.title}>
+            <img className="work-card-image" src={project.background} alt="" loading="lazy" decoding="async" />
             <div className="work-card-bg">{String(index + 1).padStart(2, '0')}</div>
             <div className="work-card-tag">{project.category}</div>
             <div className="work-card-overlay" />
