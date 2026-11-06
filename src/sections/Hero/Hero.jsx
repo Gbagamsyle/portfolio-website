@@ -8,7 +8,7 @@ export default function Hero() {
       <div className="hero-inner">
         <div className="hero-eyebrow"><span className="hero-status-dot" /> Open to new opportunities</div>
         <h1 className="hero-name">Ogaba<br /><em>Silas</em></h1>
-        <p className="hero-role">Frontend Developer &amp; Fullstack Engineer building fast, accessible digital products that help ambitious teams move from idea to launch.</p>
+        <p className="hero-role">Website and web developer, frontend developer &amp; fullstack engineer building fast, accessible digital products for clients in Abuja and across Nigeria — and remotely worldwide.</p>
         <div className="hero-actions">
           <a href="#work" className="btn-primary">View Selected Work</a>
           <a href="/assets/cv.pdf" className="btn-secondary" download>Download CV</a>

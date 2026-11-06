@@ -7,7 +7,7 @@ export default function Navbar() {
 
   return (
     <nav className={`top-nav ${menuOpen ? 'menu-open' : ''}`}>
-      <a className="nav-brand" href="#hero" aria-label="Ogaba Silas home">
+      <a className="nav-brand" href="/" aria-label="Go to Ogaba Silas homepage">
         <span className="nav-logo">OS</span>
         <span className="nav-brand-name">Ogaba Silas</span>
       </a>

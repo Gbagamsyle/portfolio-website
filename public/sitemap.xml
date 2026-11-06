@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://ogabasilas.netlify.app/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url><loc>https://ogabasilas.netlify.app/projects/flowmoney</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ogabasilas.netlify.app/projects/opsflow</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ogabasilas.netlify.app/projects/edge-health-sync</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ogabasilas.netlify.app/projects/hair-by-prevail</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ogabasilas.netlify.app/projects/devscraper</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ogabasilas.netlify.app/projects/metsad-one</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ogabasilas.netlify.app/projects/freelance-widestar</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ogabasilas.netlify.app/projects/deccan</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ogabasilas.netlify.app/projects/morphe</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ogabasilas.netlify.app/projects/kinetic</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ogabasilas.netlify.app/projects/aether</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+</urlset>
