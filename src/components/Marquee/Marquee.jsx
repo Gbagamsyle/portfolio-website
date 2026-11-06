@@ -15,7 +15,7 @@ const items = [
 
 export default function Marquee() {
   return (
-    <div className="marquee-wrap" aria-label="Technology stack marquee">
+    <div className="marquee-wrap" aria-hidden="true">
       <div className="marquee-inner">
         {[...items, ...items].map((item, index) => (
           <span key={`${item}-${index}`} className="marquee-item">

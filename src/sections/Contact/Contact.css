@@ -99,6 +99,7 @@
 .form-heading {
   display: flex;
   justify-content: space-between;
+  font-weight: 400;
   color: var(--white);
   font-family: var(--ff-display);
   font-size: 1.35rem;

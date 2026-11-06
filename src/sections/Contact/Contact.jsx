@@ -52,16 +52,16 @@ export default function Contact() {
             <div className="contact-note reveal"><span className="contact-dot" /> Usually replies within 1 business day</div>
           </div>
 
-          <form className="contact-form reveal" onSubmit={handleSubmit}>
-            <div className="form-heading">Project inquiry <span>01 / 03</span></div>
+          <form className="contact-form reveal" onSubmit={handleSubmit} aria-labelledby="contact-form-heading">
+            <h3 className="form-heading" id="contact-form-heading">Project inquiry <span aria-hidden="true">01 / 03</span></h3>
             <div className="form-row">
               <div className="form-group">
                 <label htmlFor="contact-name">Your Name</label>
-                <input id="contact-name" name="name" type="text" placeholder="John Doe" value={formData.name} onChange={handleChange} required />
+                <input id="contact-name" name="name" type="text" autoComplete="name" placeholder="John Doe" value={formData.name} onChange={handleChange} required />
               </div>
               <div className="form-group">
                 <label htmlFor="contact-email">Email Address</label>
-                <input id="contact-email" name="email" type="email" placeholder="john@company.com" value={formData.email} onChange={handleChange} required />
+                <input id="contact-email" name="email" type="email" autoComplete="email" placeholder="john@company.com" value={formData.email} onChange={handleChange} required />
               </div>
             </div>
 

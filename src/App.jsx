@@ -9,7 +9,7 @@ import Stack from './sections/Stack/Stack'
 import Testimonials from './sections/Testimonials/Testimonials'
 import Contact from './sections/Contact/Contact'
 import ProjectDetail from './sections/ProjectDetail/ProjectDetail'
-import { projects, testimonials } from './data/siteData'
+import { projects } from './data/siteData'
 
 export default function App() {
   const cursorRef = useRef(null)
@@ -69,38 +69,6 @@ export default function App() {
     }
     canonical.href = canonicalUrl
 
-    let structuredData = document.head.querySelector('#page-structured-data')
-    if (!structuredData) {
-      structuredData = document.createElement('script')
-      structuredData.id = 'page-structured-data'
-      structuredData.type = 'application/ld+json'
-      document.head.appendChild(structuredData)
-    }
-    structuredData.textContent = JSON.stringify(activeProject
-      ? {
-          '@context': 'https://schema.org',
-          '@type': 'CreativeWork',
-          name: activeProject.title,
-          description: activeProject.overview,
-          image: imageUrl,
-          url: canonicalUrl,
-          creator: { '@type': 'Person', name: 'Ogaba Silas', url: `${origin}/` },
-          keywords: activeProject.stack.join(', '),
-        }
-      : {
-          '@context': 'https://schema.org',
-          '@type': 'Person',
-          name: 'Ogaba Silas',
-          url: `${origin}/`,
-          image: new URL('/assets/syle.jpg', origin).href,
-          jobTitle: 'Website Developer, Web Developer, App developer, Frontend Developer, and Fullstack Engineer',
-          description,
-          areaServed: [
-            { '@type': 'City', name: 'Abuja' },
-            { '@type': 'Country', name: 'Nigeria' },
-            'Worldwide',
-          ],
-        })
   }, [activeProject, projectSlug])
 
   useEffect(() => {
@@ -164,10 +132,6 @@ export default function App() {
       counterObserver.observe(el)
     })
 
-    const interval = setInterval(() => {
-      setActiveTestimonial((prev) => (prev + 1) % testimonials.length)
-    }, 5000)
-
     return () => {
       document.removeEventListener('mousemove', onMove)
       hoverEls.forEach((el) => {
@@ -175,7 +139,6 @@ export default function App() {
         el.onmouseleave = null
       })
       revealObserver.disconnect()
-      clearInterval(interval)
     }
   }, [])
 

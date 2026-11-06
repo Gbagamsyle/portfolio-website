@@ -6,7 +6,7 @@ export default function Testimonials({ activeIndex = 0, setActiveIndex = () => {
 
   return (
     <section id="testimonials" className="testimonials-section">
-      <div className="section-label testimonial-label">Client Testimonials</div>
+      <h2 className="section-label testimonial-label" id="testimonials-heading">Client Testimonials</h2>
       <div className="testi-wrap reveal">
         <div id="testi-text">
           <p className="testi-quote" id="testi-q">{activeTestimonial.q}</p>
@@ -21,8 +21,13 @@ export default function Testimonials({ activeIndex = 0, setActiveIndex = () => {
             <button
               key={item.name}
               className={`testi-dot ${index === activeIndex ? 'active' : ''}`}
+              type="button"
+              aria-label={`Show testimonial ${index + 1} of ${testimonials.length} from ${item.name}`}
+              aria-pressed={index === activeIndex}
               onClick={() => setActiveIndex(index)}
-            />
+            >
+              <span className="visually-hidden">Show testimonial {index + 1}</span>
+            </button>
           ))}
         </div>
       </div>
