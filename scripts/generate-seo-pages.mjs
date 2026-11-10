@@ -111,7 +111,22 @@ try {
     await fs.writeFile(outputPath, html)
   }
 
-  console.log(`Generated SEO-ready HTML for ${pages.length} routes.`)
+  const notFoundPathname = '/404.html'
+  const notFoundUrl = `${siteUrl}${notFoundPathname}`
+  let notFoundHtml = template
+    .replace(/<title>[\s\S]*?<\/title>/, '<title>Page Not Found — Ogaba Silas</title>')
+    .replace(/<link rel="canonical" href="[^"]*"\s*\/>/, `<link rel="canonical" href="${notFoundUrl}" />`)
+  notFoundHtml = replaceMeta(notFoundHtml, 'name', 'description', 'The page you are looking for could not be found.')
+  notFoundHtml = replaceMeta(notFoundHtml, 'name', 'robots', 'noindex, follow')
+  notFoundHtml = replaceMeta(notFoundHtml, 'property', 'og:title', 'Page Not Found — Ogaba Silas')
+  notFoundHtml = replaceMeta(notFoundHtml, 'property', 'og:description', 'The page you are looking for could not be found.')
+  notFoundHtml = notFoundHtml.replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, '')
+  globalThis.window = { location: { origin: siteUrl, pathname: notFoundPathname } }
+  const notFoundMarkup = renderToString(React.createElement(App))
+  notFoundHtml = notFoundHtml.replace('<div id="root"></div>', `<div id="root">${notFoundMarkup}</div>`)
+  await fs.writeFile(path.join(outputDirectory, '404.html'), notFoundHtml)
+
+  console.log(`Generated SEO-ready HTML for ${pages.length} routes and a branded 404 page.`)
 } finally {
   delete globalThis.window
   await vite.close()

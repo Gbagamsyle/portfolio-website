@@ -29,7 +29,7 @@ export default function Navbar() {
       </ul>
       <div className="nav-actions">
         <span className="nav-availability"><span /> Available</span>
-        <a href="#contact" className="nav-cta">Hire Me</a>
+        <a href="/#contact" className="nav-cta">Hire Me</a>
       </div>
     </nav>
   )

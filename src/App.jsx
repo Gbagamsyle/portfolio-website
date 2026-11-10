@@ -9,6 +9,7 @@ import Stack from './sections/Stack/Stack'
 import Testimonials from './sections/Testimonials/Testimonials'
 import Contact from './sections/Contact/Contact'
 import ProjectDetail from './sections/ProjectDetail/ProjectDetail'
+import NotFound from './components/NotFound/NotFound'
 import { profileImage, projects } from './data/siteData'
 
 export default function App() {
@@ -16,22 +17,26 @@ export default function App() {
   const ringRef = useRef(null)
   const [activeTestimonial, setActiveTestimonial] = useState(0)
   const pathname = typeof window !== 'undefined' ? window.location.pathname : '/'
-  const projectSlug = pathname.startsWith('/projects/')
-    ? pathname.split('/')[2]
+  const normalizedPathname = pathname.replace(/\/+$/, '') || '/'
+  const isHome = normalizedPathname === '/' || normalizedPathname === '/index.html'
+  const pathSegments = normalizedPathname.split('/')
+  const projectSlug = pathSegments.length === 3 && pathSegments[1] === 'projects'
+    ? pathSegments[2]
     : null
   const activeProject = projectSlug ? projects.find((project) => project.slug === projectSlug) : null
+  const isNotFound = !isHome && (!projectSlug || !activeProject)
 
   useEffect(() => {
     const origin = window.location.origin
     const canonicalUrl = `${origin}${window.location.pathname}`
     const title = activeProject
       ? `${activeProject.title} — Project by Ogaba Silas`
-      : projectSlug
+      : isNotFound
         ? 'Project Not Found — Ogaba Silas'
         : 'Ogaba Silas | Web Developer in Abuja, Nigeria & Worldwide'
     const description = activeProject
       ? activeProject.description
-      : projectSlug
+      : isNotFound
         ? 'The requested project could not be found.'
         : 'Ogaba Silas is a website and web developer in Abuja, Nigeria, building fast, accessible websites and apps for clients locally and worldwide.'
     const image = activeProject?.background ?? profileImage
@@ -50,7 +55,7 @@ export default function App() {
     }
 
     setMeta('meta[name="description"]', 'name', 'description', description)
-    setMeta('meta[name="robots"]', 'name', 'robots', projectSlug && !activeProject ? 'noindex, follow' : 'index, follow, max-image-preview:large')
+    setMeta('meta[name="robots"]', 'name', 'robots', isNotFound ? 'noindex, follow' : 'index, follow, max-image-preview:large')
     setMeta('meta[property="og:type"]', 'property', 'og:type', activeProject ? 'article' : 'website')
     setMeta('meta[property="og:title"]', 'property', 'og:title', title)
     setMeta('meta[property="og:description"]', 'property', 'og:description', description)
@@ -69,7 +74,7 @@ export default function App() {
     }
     canonical.href = canonicalUrl
 
-  }, [activeProject, projectSlug])
+  }, [activeProject, isNotFound, projectSlug])
 
   useEffect(() => {
     const cursor = cursorRef.current
@@ -124,7 +129,7 @@ export default function App() {
 
   return (
     <MainLayout cursorRef={cursorRef} ringRef={ringRef}>
-      {projectSlug ? <ProjectDetail slug={projectSlug} /> : <>
+      {isNotFound ? <NotFound /> : projectSlug ? <ProjectDetail slug={projectSlug} /> : <>
       <Hero />
       <Marquee />
       <About />
